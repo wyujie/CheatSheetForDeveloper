@@ -43,6 +43,14 @@ for c1 in c:
   print(c1)
 ```
 
+###### Function
+```
+# define a function which allows any params and print them
+def func1(*args, **kwargs):
+  print(args, kwargs)
+```
+
+
 ## Common Libs
 ##### [pandas](https://pandas.pydata.org/pandas-docs/stable/getting_started/index.html)
 
