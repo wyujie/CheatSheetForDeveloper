@@ -1,7 +1,7 @@
 # Python
 
-## 变量/数据结构
-#### 定义
+## Variable/Data Structure
+#### Definition
 ```
 a = 1
 b = 'B'
@@ -26,7 +26,7 @@ e.add(1)
 f = (1, 2, 3)
 ```
 
-#### 逻辑控制/迭代
+#### Data Structure Iteration
 ###### Dict
 ```
 if 'k1' in d:
@@ -43,7 +43,7 @@ for c1 in c:
   print(c1)
 ```
 
-## 常用库
+## Common Libs
 ##### [pandas](https://pandas.pydata.org/pandas-docs/stable/getting_started/index.html)
 
 ## Snippet
