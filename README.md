@@ -1,1 +1,3 @@
 # CheatSheetForDeveloper
+
+- [Python](./Python.md)
