@@ -55,3 +55,41 @@ def func1(*args, **kwargs):
 ##### [pandas](https://pandas.pydata.org/pandas-docs/stable/getting_started/index.html)
 
 ## Snippet
+
+## Pydantic
+```
+from pydantic import BaseModel
+from datetime import datetime
+from typing import List, Optional 
+
+
+class BarModel(BaseModel):
+    dt: datetime
+    dt1: datetime
+    dt2: datetime
+    whatever: int
+
+
+class FooBarModel(BaseModel):
+    banana: float
+    foo: str
+    bar: BarModel
+    bars: Optional[List[BarModel]] = None
+
+
+
+json_str = '''{
+    "banana": 1.1,
+    "foo": "hello",
+    "bar": { "whatever": 123, "not_included": 1, "dt": 1234567890, "dt1": 1234567890000, "dt2": "2023-02-13T23:31:30+00:00"  },
+    "bars": [
+       { "whatever": 123, "not_included": 1, "dt": 1234567890, "dt1": 1234567890000, "dt2": "2023-02-13T23:31:30+00:00"  }, 
+       { "whatever": 123, "not_included": 1, "dt": 1234567890, "dt1": 1234567890000, "dt2": "2023-02-13T23:31:30+00:00"  } 
+    ]
+}'''
+
+print('str => pydantic: parse_raw(str) \n', FooBarModel.parse_raw(json_str), '\n')
+print('pydantic => str: obj.json() \n', FooBarModel.parse_raw(json_str).json(), '\n')
+print('pydantic => str: obj.dict() \n', FooBarModel.parse_raw(json_str).dict(), '\n')
+
+```
